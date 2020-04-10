@@ -59,8 +59,7 @@
 
         <div class="row">
             <div class="col-12">
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
-                    data-target="#add-recipe-modal">
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#add-recipe-modal">
                     Add Recipe
                 </button>
                 <div class="modal" tabindex="-1" role="dialog" id="add-recipe-modal">
@@ -72,26 +71,26 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
-                                <form class="container-fluid" onsubmit="app.recipeController.create(event)">
+                            <div class="modal-body bg-info">
+                                <form class="container-fluid" onsubmit="app.recipesController.create(event)">
                                     <div class="form-group row">
-                                        <label for="make" class="col-2 pt-2">Title:</label>
-                                        <input type="text" name="make" class="form-control col-8"
+                                        <label for="title" class="col-2 pt-2">Title:</label>
+                                        <input type="text" name="title" class="form-control col-8"
                                             placeholder="Enter Title here..." required>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="make" class="col-2 pt-2">Author:</label>
-                                        <input type="text" name="make" class="form-control col-8"
+                                        <label for="author" class="col-2 pt-2">Author:</label>
+                                        <input type="text" name="author" class="form-control col-8"
                                             placeholder="Enter Author here...">
                                     </div>
                                     <div class="form-group row">
-                                        <label for="make" class="col-2 pt-2">Size: </label>
-                                        <input type="text" name="make" class="form-control col-8"
-                                            placeholder="Enter Servings here...">
+                                        <label for="serving" class="col-2 pt-2">Size: </label>
+                                        <input type="text" name="serving" class="form-control col-8"
+                                            placeholder="Enter Servings here..." required>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="make" class="col-2 pt-2">Time:</label>
-                                        <input type="text" name="make" class="form-control col-8"
+                                        <label for="time" class="col-2 pt-2">Time:</label>
+                                        <input type="text" name="time" class="form-control col-8"
                                             placeholder="Enter Prep/Cook Time here..." required>
                                     </div>
                                     <div class="form-group row">
@@ -115,7 +114,7 @@
                                         <input type="text" name="imgUrl" class="form-control"
                                             placeholder="Enter Image Url here..." required>
                                     </div>
-                                    <button class="btn-primary btn btn-block" type="submit">Create Recipe</button>
+                                    <button class="btn-warning btn btn-block" type="submit">Create Recipe</button>
                                 </form>
                             </div>
 
@@ -125,13 +124,7 @@
             </div>
         </div>
         <div class="row card-block">
-            <div class="col-4">
-                hello
-            </div>
-            <div class="col-4">
-                hello
-            </div>
-            <div class="col-4">
+            <div class="col-12">
                 hello
             </div>
         </div>

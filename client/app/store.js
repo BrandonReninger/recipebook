@@ -1,17 +1,17 @@
-import Value from "./Models/Value.js";
+import Recipe from "./Models/Recipe.js";
 
 let _state = {
-  activeValue: new Value({ title: "Value" }),
-  /** @type {Value[]} */
-  values: []
+  activeValue: new Recipe({ title: "Recipe" }),
+  /** @type {Recipe[]} */
+  recipes: []
 };
 
 /** Collection of listeners to be called based on keyed state changes
  * @type {{[x:string]: function[]}}
  */
 let _listeners = {
-  activeValue: [],
-  values: []
+  activeRecipe: [],
+  recipes: []
 };
 
 //NOTE You should not need to change the code from this point down
