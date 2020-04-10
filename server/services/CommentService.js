@@ -14,7 +14,7 @@ class CommentService {
     async getById(id) {
         let comment = await dbContext.Comments.findById(id)
         if (!comment) {
-            throw new Error("bad id")
+            throw new BadRequest("bad id")
         }
         return comment
     }
