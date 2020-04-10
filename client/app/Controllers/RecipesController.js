@@ -5,26 +5,38 @@ import store from "../store.js";
 function _draw() {
   let recipes = store.State.recipes;
   console.log(recipes);
+
+  let template = ''
+
+  recipes.forEach(recipe => template += recipe.Template)
+  document.getElementById("recipes").innerHTML = template
 }
+
 
 //Public
 export default class RecipesController {
   constructor() {
     store.subscribe("recipes", _draw);
+    this.getRecipes()
+    console.log("Controller created")
+
   }
 
+  getRecipes() {
+    recipesService.getRecipes()
+  }
   create(event) {
     event.preventDefault()
     let formData = event.target
     let newRecipeObject = {
-      tilte: formData.title.value,
+      name: formData.name.value,
       author: formData.author.value,
       serving: formData.serving.value,
-      time: formData.time.value,
-      description: formData.description.value,
+      cookTime: formData.cookTime.value,
+      // description: formData.description.value,
       ingredients: formData.ingredients.value,
       instructions: formData.instructions.value,
-      imgUrl: formData.imgUrl.value,
+      imageUrl: formData.imageUrl.value,
 
     }
     recipesService.create(newRecipeObject)
@@ -33,6 +45,5 @@ export default class RecipesController {
     // @ts-ignore
     $('#add-recipe-modal').modal('toggle')
 
-    console.log("Controller created")
   }
 }

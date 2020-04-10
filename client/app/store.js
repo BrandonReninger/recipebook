@@ -1,7 +1,7 @@
 import Recipe from "./Models/Recipe.js";
 
 let _state = {
-  activeValue: new Recipe({ title: "Recipe" }),
+  activeRecipe: new Recipe({ title: "Recipe" }),
   /** @type {Recipe[]} */
   recipes: []
 };
