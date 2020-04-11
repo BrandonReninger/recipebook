@@ -1,15 +1,15 @@
 import express from "express";
 import BaseController from "../utils/BaseController";
 import {
-    commentService
-} from "../services/CommentService";
+    userService
+} from "../services/UserService";
 import {
     BadRequest
 } from "../utils/Errors";
 
-export class CommentController extends BaseController {
+export class UserController extends BaseController {
     constructor() {
-        super("api/comments");
+        super("api/users");
         this.router
             .get("", this.getAll)
             .get("/:id", this.getById)
@@ -21,8 +21,8 @@ export class CommentController extends BaseController {
 
     async delete(req, res, next) {
         try {
-            let comment = await commentService.delete(req.params.id)
-            res.send(comment)
+            let user = await userService.delete(req.params.id)
+            res.send(user)
         } catch (error) {
             next(error)
         }
@@ -30,8 +30,8 @@ export class CommentController extends BaseController {
 
     async edit(req, res, next) {
         try {
-            let comment = await commentService.edit(req.params.id, req.body)
-            res.send(comment)
+            let user = await userService.edit(req.params.id, req.body)
+            res.send(user)
         } catch (error) {
             next(error)
         }
@@ -39,11 +39,11 @@ export class CommentController extends BaseController {
 
     async getById(req, res, next) {
         try {
-            let comment = await commentService.getById(req.params.id)
-            if (!comment) {
+            let user = await userService.getById(req.params.id)
+            if (!user) {
                 throw new BadRequest("Bad id")
             }
-            res.send(comment)
+            res.send(user)
         } catch (error) {
             next(error)
         }
@@ -51,10 +51,10 @@ export class CommentController extends BaseController {
 
     async getAll(req, res, next) {
         try {
-            let comments = await commentService.getAll()
+            let user = await userService.getAll()
             res.send({
-                data: comments,
-                message: "got comments"
+                data: user,
+                message: "got users"
             })
         } catch (error) {
             next(error);
@@ -63,10 +63,10 @@ export class CommentController extends BaseController {
 
     async create(req, res, next) {
         try {
-            let comment = await commentService.create(req.body)
+            let user = await userService.create(req.body)
             res.send({
-                data: comment,
-                message: "comment created"
+                data: user,
+                message: "user created"
             })
         } catch (error) {
             next(error);

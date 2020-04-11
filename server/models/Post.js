@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
+const ObjectId = mongoose.Schema;
 
 const Post = new Schema({
   name: {
@@ -29,7 +30,11 @@ const Post = new Schema({
   instructions: {
     type: String,
     required: true
-  }
+  },
+  //comment: [{
+  //type: ObjectId,
+  //ref: "comment"
+  //}]
 }, {
   timestamps: true,
   toJSON: {
