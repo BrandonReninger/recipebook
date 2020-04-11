@@ -9,7 +9,7 @@ function _draw() {
   let template = ''
 
   comments.forEach(comment => template += comment.Template)
-  document.getElementById("comments").innerHTML = template
+  document.getElementById(`comments-${comments[0].post}`).innerHTML = template
 }
 
 
@@ -29,7 +29,7 @@ export default class CommentsController {
     event.preventDefault()
     let formData = event.target
     let newCommentObject = {
-      body: formData.body,
+      body: formData.body.value,
       post: id
     }
     commentsService.create(newCommentObject)

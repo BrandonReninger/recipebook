@@ -6,7 +6,7 @@ let _state = {
   /** @type {Recipe[]} */
   recipes: [],
   /**@type {Comment[]} */
-  Comments: [],
+  comments: [],
 };
 
 /** Collection of listeners to be called based on keyed state changes
@@ -15,7 +15,7 @@ let _state = {
 let _listeners = {
   // activeRecipe: [],
   recipes: [],
-  Comments: [],
+  comments: [],
 };
 
 //NOTE You should not need to change the code from this point down
