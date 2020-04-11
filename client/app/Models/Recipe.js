@@ -22,13 +22,14 @@ export default class Recipe {
            </button>
         <div class= "row">
         <div class = "col-4"><img class="img-fluid" src="${this.imageUrl}"/>
+        <p><i class="far fa-arrow-alt-circle-down"></i><i class="far fa-arrow-alt-circle-up"></i><p>
         </div>
         <div class="col-8"><p>${this.name}</p>
-        <p>${this.author}</p>
-        <p>${this.serving}</p>
-        <p>${this.cookTime}</p>
-        <p>${this.ingredients}</p>
-        <p>${this.instructions}</p>
+        <p><b>Source:</b> ${this.author}</p>
+        <p>Servings: ${this.serving}</p>
+        <p>Time: ${this.cookTime}</p>
+        <p>Ingredients: ${this.ingredients}</p>
+        <p>Instructions: ${this.instructions}</p>
         </div>
         </div>
         <div class ="row">
@@ -37,7 +38,9 @@ export default class Recipe {
         <input class="form-control mr-sm-2" type="text" name="body" placeholder="add thoughts ♥ ♥ ♥" aria-label="Search" >
         </form>
         <div class="row">
-        <div class="col-12" id="comments-${this.id}"></div>
+        <button onclick="app.commentsController.getCommentsByPost('${this.id}')">Get comments</button>
+        <div class="col-2">User ID:</div>
+        <div class="col-10" id="comments-${this.id}"></div>
         </div>
         </div>
         </div>

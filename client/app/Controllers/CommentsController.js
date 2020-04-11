@@ -17,7 +17,6 @@ function _draw() {
 export default class CommentsController {
   constructor() {
     store.subscribe("comments", _draw);
-    this.getComments()
     console.log("Comment Controller created")
 
   }
@@ -38,5 +37,9 @@ export default class CommentsController {
     // @ts-ignore
     $('#add-comment-modal').modal('toggle')
 
+  }
+
+  getCommentsByPost(id) {
+    commentsService.getCommentsByPost(id)
   }
 }

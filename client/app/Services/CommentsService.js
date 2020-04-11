@@ -44,11 +44,10 @@ class CommentsService {
       store.commit('comments', comments)
     } catch (error) {
       console.error(error);
-
     }
   }
+
   constructor() {
-    this.getComments()
   }
 
 }
