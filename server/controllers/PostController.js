@@ -18,9 +18,19 @@ export class PostController extends BaseController {
       .get("/:id", this.getById)
       .get("/:id/comments", this.getCommentsByPostId)
       .post("", this.create)
+      //.post("/:id/comments", this.createComment)
       .put("/:id", this.edit)
       .delete("/:id", this.delete)
 
+  }
+
+  async createComment(req, res, next) {
+    try {
+      let comment = await commentService.create(req.params.body)
+      res.send(comment)
+    } catch (error) {
+
+    }
   }
 
   async getCommentsByPostId(req, res, next) {
