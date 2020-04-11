@@ -9,7 +9,8 @@ const Comment = new Schema({
         required: true
     }],
     post: {
-        type: ObjectId
+        type: ObjectId,
+        required: true
     },
     userId: {
         type: ObjectId

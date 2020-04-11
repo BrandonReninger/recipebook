@@ -5,7 +5,8 @@ const ObjectId = Schema.Types.ObjectId;
 
 const User = new Schema({
     userName: {
-        Type: String
+        type: String,
+        required: true
     }
 }, {
     timestamps: true,
