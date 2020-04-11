@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 const Comment = new Schema({
-    comment: [{
+    body: [{
         type: String,
         required: true
     }],
