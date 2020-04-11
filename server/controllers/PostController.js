@@ -6,6 +6,9 @@ import {
 import {
   BadRequest
 } from "../utils/Errors";
+import {
+  commentService
+} from "../services/CommentService";
 
 export class PostController extends BaseController {
   constructor() {
@@ -13,10 +16,22 @@ export class PostController extends BaseController {
     this.router
       .get("", this.getAll)
       .get("/:id", this.getById)
+      .get("/:id/comments", this.getCommentsByPostId)
       .post("", this.create)
       .put("/:id", this.edit)
       .delete("/:id", this.delete)
 
+  }
+
+  async getCommentsByPostId(req, res, next) {
+    try {
+      let post = await commentService.find({
+        post: req.params.id
+      })
+      res.send(post)
+    } catch (error) {
+
+    }
   }
 
   async delete(req, res, next) {

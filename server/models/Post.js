@@ -30,10 +30,10 @@ const Post = new Schema({
   instructions: {
     type: String,
     required: true
-  },
+  }
   //comment: [{
-  //type: ObjectId,
-  //ref: "comment"
+  // type: ObjectId,
+  // ref: "comment"
   //}]
 }, {
   timestamps: true,
