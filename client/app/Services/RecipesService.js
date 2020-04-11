@@ -16,7 +16,16 @@ class RecipesService {
       .catch(err => console.error(err))
   }
 
-
+  delete(id) {
+    debugger
+    _api.delete(id)
+      .then(res => {
+        console.log(res)
+        this.getRecipes()
+      })
+      .catch(err =>
+        console.error(err))
+  }
 
   create(newRecipeObject) {
     console.log(newRecipeObject)

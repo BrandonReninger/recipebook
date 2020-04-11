@@ -8,10 +8,36 @@ export default class Recipe {
         this.ingredients = data.ingredients;
         this.instructions = data.instructions;
         this.imageUrl = data.imageUrl
+        this.id = data.id || data._id
+        this.upvotes = data.upvotes
+        this.downvotes = data.downvotes
 
     }
 
     get Template() {
-        return `'<p>${this.name}</p>'`
+        return /*html*/ `
+        <div class = "col-10 offset-1 py-2 mb-5 border shadow bg-light">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <span onclick="app.recipesController.delete('${this.id}')">&times;</span>
+           </button>
+        <div class= "row">
+        <div class = "col-4"><img class="img-fluid" src="${this.imageUrl}"/>
+        </div>
+        <div class="col-8"><p>${this.name}</p>
+        <p>${this.author}</p>
+        <p>${this.serving}</p>
+        <p>${this.cookTime}</p>
+        <p>${this.ingredients}</p>
+        <p>${this.instructions}</p>
+        </div>
+        </div>
+        <div class ="row">
+        <div class="col-12"> 
+        <input class="form-control mr-sm-2" type="search" placeholder="add thoughts ♥ ♥ ♥" aria-label="Search">
+        </div>
+        </div>
+        </div>
+     
+     `
     }
 }

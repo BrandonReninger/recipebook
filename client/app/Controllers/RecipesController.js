@@ -46,4 +46,11 @@ export default class RecipesController {
     $('#add-recipe-modal').modal('toggle')
 
   }
+  // addComment(id) {
+  //   $('#add-comment-modal').modal('toggle')
+  // }
+
+  delete(id) {
+    recipesService.delete(id)
+  }
 }
