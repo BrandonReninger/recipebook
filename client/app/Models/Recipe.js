@@ -33,7 +33,9 @@ export default class Recipe {
         </div>
         <div class ="row">
         <div class="col-12"> 
-        <input class="form-control mr-sm-2" type="search" placeholder="add thoughts ♥ ♥ ♥" aria-label="Search">
+        <form onsubmit="app.recipesController.addComment(event, '${this.id}')">
+        <input class="form-control mr-sm-2" type="text" name="body" placeholder="add thoughts ♥ ♥ ♥" aria-label="Search" >
+        </form>
         </div>
         </div>
         </div>
