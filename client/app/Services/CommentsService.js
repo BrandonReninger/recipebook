@@ -26,7 +26,7 @@ class CommentsService {
         console.error(err))
   }
 
-  create(newCommentObject, id) {
+  create(newCommentObject) {
     console.log(newCommentObject)
     _api.post('', newCommentObject)
       .then(res => {

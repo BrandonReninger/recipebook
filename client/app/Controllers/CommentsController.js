@@ -29,9 +29,10 @@ export default class CommentsController {
     event.preventDefault()
     let formData = event.target
     let newCommentObject = {
-      body: formData.body
+      body: formData.body,
+      post: id
     }
-    commentsService.create(newCommentObject, id)
+    commentsService.create(newCommentObject)
     formData.reset()
 
     // @ts-ignore
