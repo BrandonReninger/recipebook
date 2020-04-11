@@ -1,5 +1,6 @@
 import recipesService from "../Services/RecipesService.js";
 import store from "../store.js";
+import Recipe from "../Models/Recipe.js";
 
 //Private
 function _draw() {
@@ -46,11 +47,20 @@ export default class RecipesController {
     $('#add-recipe-modal').modal('toggle')
 
   }
-  // addComment(id) {
-  //   $('#add-comment-modal').modal('toggle')
-  // }
+  addComment(event, id) {
+    event.preventDefault()
+    let formData = event.target
+    let commentData = {
+      body: formData.body.value
+    }
+    recipesService.addComment(id, commentData)
+  }
 
   delete(id) {
-    recipesService.delete(id)
+    let didConfirm = confirm("Are you sure you want to delete this List?");
+    if (didConfirm) {
+      recipesService.delete(id)
+
+    }
   }
 }
