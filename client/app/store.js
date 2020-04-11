@@ -1,17 +1,21 @@
 import Recipe from "./Models/Recipe.js";
+import Comment from "./Models/Comment.js";
 
 let _state = {
-  activeRecipe: new Recipe({ title: "Recipe" }),
+  // activeRecipe: new Recipe({ title: "Recipe" }),
   /** @type {Recipe[]} */
-  recipes: []
+  recipes: [],
+  /**@type {Comment[]} */
+  Comments: [],
 };
 
 /** Collection of listeners to be called based on keyed state changes
  * @type {{[x:string]: function[]}}
  */
 let _listeners = {
-  activeRecipe: [],
-  recipes: []
+  // activeRecipe: [],
+  recipes: [],
+  Comments: [],
 };
 
 //NOTE You should not need to change the code from this point down
