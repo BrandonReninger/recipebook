@@ -11,8 +11,8 @@ class PostService {
     return post
   }
 
-  async getById(id) {
-    let post = await dbContext.Posts.findById(id)
+  async getById(id) { //FIXME get populate working
+    let post = await (await dbContext.Posts.findById(id)) //.populate('comment user', "")
     if (!post) {
       throw new Error("bad id")
     }
