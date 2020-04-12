@@ -1,5 +1,6 @@
 import Recipe from "./Models/Recipe.js";
 import Comment from "./Models/Comment.js";
+import User from "./Models/User.js";
 
 let _state = {
   // activeRecipe: new Recipe({ title: "Recipe" }),
@@ -7,6 +8,10 @@ let _state = {
   recipes: [],
   /**@type {Comment[]} */
   comments: [],
+  /**@type {User[]} */
+  users: [],
+  //should this be an object instead of an array?
+  activeUser: new User({ name: "User" })
 };
 
 /** Collection of listeners to be called based on keyed state changes
@@ -16,6 +21,8 @@ let _listeners = {
   // activeRecipe: [],
   recipes: [],
   comments: [],
+  users: [],
+  activeUser: [],
 };
 
 //NOTE You should not need to change the code from this point down

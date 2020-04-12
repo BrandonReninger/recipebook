@@ -47,6 +47,16 @@ class CommentsService {
     }
   }
 
+  async getCommentsByUser(id) {
+    try {
+      let res = await _api.get('users/' + id + '/comments')
+      let comments = res.data.map(rawCommentData => new Comment(rawCommentData))
+      store.commit('comments', comments)
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   constructor() {
   }
 

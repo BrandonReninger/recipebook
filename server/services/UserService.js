@@ -42,13 +42,7 @@ class UserService {
         let users = await dbContext.Users.find(query);
         return users;
     }
-    async findById(id) {
-        let user = await dbContext.Users.findById(id);
-        if (!user) {
-            throw new BadRequest("Invalid Id");
-        }
-        return user;
-    }
+
 }
 
 export const userService = new UserService();
