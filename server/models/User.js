@@ -7,6 +7,12 @@ const User = new Schema({
     userName: {
         type: String,
         required: true
+    },
+    post: {
+        type: ObjectId,
+    },
+    comment: {
+        type: ObjectId,
     }
 }, {
     timestamps: true,

@@ -16,8 +16,8 @@ export class CommentController extends BaseController {
             .post("", this.create)
             .put("/:id", this.edit)
             .delete("/:id", this.delete)
-
     }
+
 
     async delete(req, res, next) {
         try {
