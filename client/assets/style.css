@@ -1,5 +1,10 @@
 /* Styles */
-
+.header{
+    font-family:Jokerman;
+}
+.search{
+  margin-left: 650px;
+}
 .addbtn{
   margin-left: 650px;
   padding-left: 50px;
@@ -28,7 +33,7 @@ font-size: 25px;
 }
 .img{
 box-shadow: black 2px 2px 5px;
-max-height: 60vh;
+max-height: 58vh;
 max-width: 25vw;
 
 }
