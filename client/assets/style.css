@@ -1,12 +1,14 @@
 /* Styles */
-{
-  border: black 1px solid;
-}
+
 .addbtn{
-  margin-left: 570px;
+  margin-left: 650px;
+  padding-left: 50px;
+  padding-right: 50px;
   border: black 2px solid;
    border-radius: 15px;
    box-shadow: rgba(9, 54, 68, 0.74) 0px 0px 5px 2px;
+     font-family:Engravers MT;
+font-size: 20px;
 }
 .comment{
   border: black 1px solid;
