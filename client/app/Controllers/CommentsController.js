@@ -42,4 +42,11 @@ export default class CommentsController {
   getCommentsByPost(id) {
     commentsService.getCommentsByPost(id)
   }
+
+  delete(id) {
+    let confirm = window.confirm("Delete this comment?")
+    if (confirm) {
+      commentsService.delete(id)
+    }
+  }
 }

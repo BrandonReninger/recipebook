@@ -2,3 +2,31 @@
 {
   border: black 1px solid;
 }
+.addbtn{
+  margin-left: 570px;
+  border: black 2px solid;
+   border-radius: 15px;
+   box-shadow: rgba(9, 54, 68, 0.74) 0px 0px 5px 2px;
+}
+.comment{
+  border: black 1px solid;
+  border-radius: 15px;
+  box-shadow: black 2px 2px 5px;
+ 
+}
+
+.display{
+  border: rgb(4, 95, 68) 5px dotted;
+  box-shadow: rgba(3, 62, 85, 0.74) 0px 0px 10px 5px;
+}
+.recName{
+  text-align: center;
+  font-family:Goudy Stout;
+font-size: 25px;
+}
+.img{
+box-shadow: black 2px 2px 5px;
+max-height: 60vh;
+max-width: 25vw;
+
+}
