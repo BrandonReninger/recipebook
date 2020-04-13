@@ -1,6 +1,5 @@
 import User from "../Models/User.js"
 import store from "../store.js"
-import { raw } from "express"
 
 // @ts-ignore
 let _api = axios.create({

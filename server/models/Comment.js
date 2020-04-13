@@ -13,13 +13,17 @@ const Comment = new Schema({
         required: true
     },
     userId: {
-        type: ObjectId
+        type: ObjectId,
+        ref: "User",
+        required: true
     },
     upvotes: [{
-        type: ObjectId
+        type: ObjectId,
+        ref: "User"
     }],
     downvotes: [{
-        type: ObjectId
+        type: ObjectId,
+        ref: "User"
     }]
 }, {
     timestamps: true,

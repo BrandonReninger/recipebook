@@ -12,7 +12,7 @@ class CommentService {
     }
 
     async getById(id) {
-        let comment = await dbContext.Comments.findById(id)
+        let comment = await dbContext.Comments.findById(id).populate("userId")
         if (!comment) {
             throw new BadRequest("bad id")
         }
@@ -33,17 +33,17 @@ class CommentService {
 
 
     async getAll() {
-        let comments = await dbContext.Comments.find()
+        let comments = await dbContext.Comments.find().populate("userId")
         return comments
     }
 
 
     async find(query = {}) {
-        let comments = await dbContext.Comments.find(query);
+        let comments = await dbContext.Comments.find(query).populate("userId")
         return comments;
     }
     async findById(id) {
-        let comment = await dbContext.Comments.findById(id);
+        let comment = await dbContext.Comments.findById(id).populate("userId")
         if (!comment) {
             throw new BadRequest("Invalid Id");
         }
